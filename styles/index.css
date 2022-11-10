@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap');
+
+body{
+    font-family: "Nunito";
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-around;
+    background-color: #EEE;
+}
+
+
+body > section{
+    flex-grow: 0;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    background-color: white;
+}
+
+.sideBarLinks{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-right: 1px solid gray;
+}
+
+.sideBarLinks > div{
+    flex: 1;
+}
+
+.sideBarLink{
+    padding: 1em;
+    margin: 1.4em;
+    font-weight: 500;
+    font-size: 1.2rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform ease-in-out .2s;
+}
+
+.sideBarLink > button{
+    cursor: pointer;
+}
+
+.sideBarLink:hover{
+    background-color: rgb(250, 250, 250);
+    transform: scale(1.1);
+}
+.sideBarLink:active{
+    background-color: rgb(233, 233, 233);
+    transform: scale(1.1);
+}
+.sidebarLogo{
+    font-family: 'Akaya Kanadaka', cursive;
+    font-size: 1.8rem;
+    padding: 1em;
+    font-weight: 500;
+    font-size: 1.8rem;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 1220px){
+    .logoutButton, .sidebarLogo{
+        display: none;
+    }
+    .sideBarLink > a{
+        display: none;
+    }
+}
+
+/* CARDS / POSTS */
+
+#card{
+    z-index: 1;
+    margin-top: 2em;
+    padding: 1.2rem;
+    /* border: 1px solid black; */
+}
+
+.postBg{
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.cardBody{
+    position: relative;
+}
+
+.content{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content{
+    width: 95%;
+    color: white;
+}
+
+.content > q{
+    font-size: 2rem;
+    text-shadow: 2px 3px 3px black;
+}
+
+.content > .subHeading{
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.content > .subHeading > .line{
+    width: 4em;
+    height: 2px;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.content > .subHeading > h5{
+    font-size: 1.4rem;
+    text-shadow: 2px 3px 3px black;
+}
+
+/*! Add Post */
+.formTitleIDK{
+    color: black;
+    font-size: 32px;
+  }
+  
+  #contact-overlay{
+    overflow-y: hidden;
+    background: rgb(255,255,255);
+    background-size: cover;
+    width: 80%;
+    height: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    display: none;
+    z-index: 1;
+
+  }
+  
+.contact-form-wrap{
+    overflow-y: auto;
+    color: black;
+    margin: 0 auto;
+    padding: 4rem;
+    position: relative;
+    z-index: 3;
+}
+  
+form{
+    width: 100%;
+    text-align: left;
+}
+  
+form div{
+    padding: .5rem 0;
+}
+  
+label{
+    color: black;
+}
+  
+input{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-sizing : border-box;
+}
+  
+textarea{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid black;
+    box-sizing : border-box;
+}
+  
+input[type=submit]{
+    cursor: pointer;
+    text-align: center;
+    background: #FEAE96;
+    border: 0px solid black;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #FFF;
+    margin: 0 auto;
+    box-sizing : border-box;
+}
+input[type="submit"]:hover{
+    background: #f3a48b;
+}
+input[type="submit"]:active{
+    background: rgb(255, 146, 152);
+}
+
+#myForm ::placeholder{
+    color: rgba(0,0,0,0.5);
+}
+  
+  
+  
+  
+  .close {
+    display: none;
+    position: absolute;
+    right: 19px;
+    top: 23px;
+    width: 28px;
+    height: 23px;
+    opacity: 1;
+    z-index: 3;
+  }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 15px;
+    width: 3px;
+    background-color: black;
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
+  

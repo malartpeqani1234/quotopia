@@ -1,0 +1,150 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --light-color: #F3F3F3;
+  --dark-color: #013237;
+  --main-color: #fe979c;
+  --secondary-color: #FEAE96;
+  --teratery-color: #F6E8DF;
+}
+
+body{
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  overflow-x: none;
+  overflow-y: none;
+}
+
+#main{
+  overflow-x: none;
+  overflow-y: none;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/bg/Sign In.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+#main2{
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../assets/bg/Log In.png');
+  background-position: left;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+.signin_form{
+  height: 96%;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  border: none;
+  border-top: #d1d1d1 2px solid;
+  border-bottom: #d1d1d1 2px solid;
+  padding: 2em .2em;
+
+}
+
+.inputBox{
+  text-align: left;
+  position: relative;
+  transition: all ease-out .4;
+}
+
+.inputBox > input{
+  border-radius: 15px;
+  border: 3px solid #FE979C;
+  padding: 1em;
+  width: 20em;
+  margin: .5em auto;
+  /* background-color: #F9F9F9; */
+  outline: none;
+}
+
+.inputBox span{
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: 1.7em;
+  pointer-events: none;
+  transition: all ease-in-out 0.3s;
+  opacity: .4;
+  /* color: var(--main-color) */
+}
+
+.inputBox input:valid ~ span, 
+.inputBox input:focus ~ span {
+  color: white;
+  transform: translateX(10px) translateY(-1px);
+  font-size: 0.80em;
+  padding: 0 1.5em;
+  background-color: white;
+  letter-spacing: 0.2em;
+  opacity: 1;
+  background: var(--main-color);
+}
+
+
+form > button{
+  border-radius: 15px;
+  background: none;
+  padding: 1em;
+  width: 20em;
+  margin: .3em auto;
+  border: 3px solid var(--secondary-color);
+  text-transform: uppercase;
+  transition: all ease-out .3s;
+  box-shadow: 0 4px 15px rgba(254, 151, 156, 1);
+  cursor: pointer;
+}
+
+form > button:hover{
+  background-color: var(--secondary-color);
+  color: white;
+  letter-spacing: .2em;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(254, 151, 156, 1);
+}
+
+
+.signin_form{
+  background-color: white;
+  text-align: center; 
+  padding: 3em 2em;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, .1) 0px 5px 8px 3px;
+}
+
+.login_form{
+  background-color: white;
+  text-align: center; 
+  padding: 3em 2em;
+  border-radius: 50px;
+  box-shadow: rgba(0, 0, 0, .1) 0px 5px 8px 3px;
+}
+
+h2{
+  font-weight: bold;
+  font-size: 32px;
+}
+
+a{
+  color: blue;
+  text-decoration: underline;
+  padding-left: 5px;
+}

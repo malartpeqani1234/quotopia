@@ -22,7 +22,7 @@ if (empty($_SESSION["id"])) {
 ?>
 
 <?php
-    include "./addPostServer.php";
+    // include "./addPostServer.php";
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +58,7 @@ if (empty($_SESSION["id"])) {
     <div id="contact-overlay">
         <div class="contact-form-wrap">
             <h1 class="formTitleIDK">Create New Post</h1>
-            <form id="myForm" action="" method="post" autocomplete="off">
+            <form id="myForm" action="./addPostServer.php" method="POST" autocomplete="off">
                 <div>
                     <textarea placeholder="Quote:" name="quoteInp" id="" cols="20" rows="10" required></textarea>
                 </div>

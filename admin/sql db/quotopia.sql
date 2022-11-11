@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2022 at 02:45 PM
--- Server version: 10.4.22-MariaDB
--- PHP Version: 8.1.2
+-- Generation Time: Nov 11, 2022 at 04:59 PM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -29,11 +29,20 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `posts` (
   `id` int(11) NOT NULL,
-  `bgImage` varchar(255) NOT NULL,
-  `quote` varchar(255) NOT NULL,
-  `author` varchar(255) NOT NULL,
-  `userId` int(255) NOT NULL
+  `quote` varchar(255) DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `username` varchar(255) NOT NULL,
+  `bgPost` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `posts`
+--
+
+INSERT INTO `posts` (`id`, `quote`, `author`, `username`, `bgPost`) VALUES
+(1, 'asdasd', 'asdasd', '', ''),
+(2, 'asdasd', 'asdasd', '', ''),
+(3, 'qweqwe', 'qweqwe', 'malart', '');
 
 -- --------------------------------------------------------
 
@@ -56,8 +65,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `email`, `name`, `username`, `password`, `usertype`, `profilePic`) VALUES
-(1, 'admin@admin.gmail.com', 'admin', 'admin', 'mali1234', 'admin', ''),
-(2, 'malart@gmail.com', 'malart', 'm4likun', 'malart123', 'user', 'post.jpg');
+(1, 'admin@admin.com', 'admin', 'admin', 'mali1234', 'admin', ''),
+(2, 'malart@gmail.com', 'malart', 'm4likun', 'malart123', 'user', 'post.jpg'),
+(3, 'perparim@gmail.com', 'Perparim', 'Pipo', 'pipo123', 'user', ''),
+(4, 'die@gmail.com', 'dontdie', 'dontdie123', 'die123', 'user', '');
 
 --
 -- Indexes for dumped tables
@@ -67,8 +78,7 @@ INSERT INTO `users` (`ID`, `email`, `name`, `username`, `password`, `usertype`, 
 -- Indexes for table `posts`
 --
 ALTER TABLE `posts`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `userId` (`userId`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -81,20 +91,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `posts`
---
-ALTER TABLE `posts`
-  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`ID`);
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

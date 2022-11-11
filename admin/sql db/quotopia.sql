@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 07, 2022 at 02:45 PM
+-- Generation Time: Nov 11, 2022 at 02:45 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -24,16 +24,30 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `posts`
+--
+
+CREATE TABLE `posts` (
+  `id` int(11) NOT NULL,
+  `bgImage` varchar(255) NOT NULL,
+  `quote` varchar(255) NOT NULL,
+  `author` varchar(255) NOT NULL,
+  `userId` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
 CREATE TABLE `users` (
-  `ID` int(11) NOT NULL,
-  `email` varchar(50) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL,
-  `usertype` varchar(50) NOT NULL DEFAULT 'user',
+  `ID` int(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `usertype` varchar(255) NOT NULL DEFAULT 'user',
   `profilePic` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -42,24 +56,19 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`ID`, `email`, `name`, `username`, `password`, `usertype`, `profilePic`) VALUES
-(1, 'admin@gmail.com', 'admin', 'admin', 'mali123', 'admin', ''),
-(2, 'malart@gmail.com', 'Malart', 'm4likun', 'malart123', 'user', ''),
-(3, 'mali123@gmail.com', 'Malart', 'malart1234', 'malart123', 'user', ''),
-(6, 'blini@gmail.com', 'Blini', 'z_blini', 'blini1234', 'user', ''),
-(7, 'lluni@gmail.com', 'Lluni', 'lluni_.', 'lluni123', 'user', ''),
-(8, 'mali@gmail.com', 'Malart', 'arti123', '74c7257597e7cc7f317a54f89a460206', 'user', ''),
-(9, 'ledri@gmail.com', 'Ledri', 'ledri123', '18e8d250f339881824dae91ae8473a39', 'user', ''),
-(10, 'blini123@gmail.com', 'blini', 'z_blini123', '9e18461e8075c5c88fa4da1952c7485f', 'user', ''),
-(11, 'gert@gmail.com', 'Gert', 'gertice', 'gert123', 'user', ''),
-(12, 'perparim@gmail.com', 'Perparim', 'pipo', 'pipo123', 'user', ''),
-(13, 'asdsa@gmail.com', 'dsaads', 'dsadasd', 'bd967d428e20f7655671a705ff471152', 'user', ''),
-(14, 'asdsadsa@gmail.com', 'dsdasdsadas', '1123213213', 'de36135571afb35052277ada9414ff36', 'mod', ''),
-(26, 'asd@gmail.com', 'asd', 'asdfgh', 'asd123', 'user', '4328ec40b75f56d975849525986cfb11.jpg'),
-(27, 'qwe@gmail.com', 'qwerty', 'qwerty123', 'qwerty', 'user', '4328ec40b75f56d975849525986cfb11.jpg');
+(1, 'admin@admin.gmail.com', 'admin', 'admin', 'mali1234', 'admin', ''),
+(2, 'malart@gmail.com', 'malart', 'm4likun', 'malart123', 'user', 'post.jpg');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `userId` (`userId`);
 
 --
 -- Indexes for table `users`
@@ -75,7 +84,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `ID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `users` (`ID`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

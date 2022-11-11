@@ -1,16 +1,25 @@
 <?php
-// include "./config.php";
+include "config.php";
 if (isset($_POST["addPostBtn"])) {
-    $username = $_SESSION['username'];
-    $quoteInp = mysqli_real_escape_string($conn, $_POST["quoteInp"]);
-    $authorInp = mysqli_real_escape_string($conn, $_POST["authorInp"]);
+    $username = $_SESSION['name'];
+    $quoteInp = $_POST["quoteInp"];
+    $authorInp = $_POST["authorInp"];
 
-    $bgPostInp = $_FILES['bgPostInp']["name"];
-    $bgPostInp_tmp = $_FILES['bgPostInp']["tmp_name"];
+    $bgPostInp = $_FILES['bgPostInp']['name'];
+    $bgPostInp_tmp = $_FILES['bgPostInp']['tmp_name'];
 
-    $query = "INSERT INTO `posts`(`bgImage`, `quote`, `author`, `userId`) VALUES ('$bgPostInp','$quoteInp,'$authorInp','$username')";
+    echo $username.'<br>';
+    echo $quoteInp.'<br>';
+    echo $authorInp.'<br>';
 
-    mysqli_query($conn, $query);
-    echo "<script>alert('Quote Posted Succesfully!!!');</script>";
-    header("Location: ./index.php");
+    $query = "INSERT INTO posts(quote, author, username, bgPost) VALUES ('$quoteInp','$authorInp','$username', '$bgPostInp')";
+
+    if(mysqli_query($conn, $query)){
+        echo "<script>alert('Quote Posted Succesfully!!!');</script>";
+    // header("Location: ./index.php");
+    } else {
+        echo "<script>alert('Query didint work');</script>";
+    }
+} else {
+    echo "Error 404";
 }

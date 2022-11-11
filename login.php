@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 	$row = mysqli_fetch_assoc($result);
 
 	// Admin Log In
-	if ($row['usertype'] == 'admin' && $row["password"] == 'mali123') {
+	if ($row['usertype'] == 'admin' && $row["password"] == 'mali1234') {
 		$_SESSION['adminLogin'] = true;
 		$_SESSION['uid'] = $row['ID'];
 		header("Location: ./admin/index.php");

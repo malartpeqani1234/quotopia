@@ -21,9 +21,7 @@ if (empty($_SESSION["id"])) {
 }
 ?>
 
-<?php
-    // include "./addPostServer.php";
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +56,7 @@ if (empty($_SESSION["id"])) {
     <div id="contact-overlay">
         <div class="contact-form-wrap">
             <h1 class="formTitleIDK">Create New Post</h1>
-            <form id="myForm" action="./addPostServer.php" method="POST" autocomplete="off">
+            <form id="myForm" method="POST" autocomplete="off" enctype="multipart/form-data">
                 <div>
                     <textarea placeholder="Quote:" name="quoteInp" id="" cols="20" rows="10" required></textarea>
                 </div>
@@ -66,13 +64,17 @@ if (empty($_SESSION["id"])) {
                     <input placeholder="Author" type="text" name="authorInp" id="name" required>
                 </div>
                 <div>
-                    <label for="name">Background Image:</label>
-                    <input type="file" name="bgPostInp" required>
+                    <!-- <label for="name">Background Image:</label>
+                    <input type="file" name="fileUpload" required> -->
+                    File Upload:<input type="file" name="fileUpload1"><br><br>
                 </div>
                 <div>
                     <input type="submit" value="Add Post" name="addPostBtn">
                 </div>
             </form>
+            <?php
+                include "./addPostServer.php";
+            ?>
         </div>
         <div class="dark-overlay"></div>
     </div>

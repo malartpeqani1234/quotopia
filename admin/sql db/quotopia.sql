@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 11, 2022 at 04:59 PM
+-- Generation Time: Nov 18, 2022 at 04:14 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -42,7 +42,22 @@ CREATE TABLE `posts` (
 INSERT INTO `posts` (`id`, `quote`, `author`, `username`, `bgPost`) VALUES
 (1, 'asdasd', 'asdasd', '', ''),
 (2, 'asdasd', 'asdasd', '', ''),
-(3, 'qweqwe', 'qweqwe', 'malart', '');
+(3, 'qweqwe', 'qweqwe', 'malart', ''),
+(4, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', ''),
+(5, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', ''),
+(6, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', ''),
+(7, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', ''),
+(8, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', 'fileUpload'),
+(9, 'Gur gur bohet mur\r\nmur mur bohet kala AHAHAHAHAHAHHAHA', 'Malart Peqani', 'malart', ''),
+(10, 'hellllllllllll', 'pipo', 'malart', ''),
+(11, 'hellllllllllll', 'pipo', 'malart', ''),
+(12, 'asdasdsadsadad', 'ari', 'malart', ''),
+(13, 'asdsasdaw123', '123123', 'malart', ''),
+(14, '1232131', '123213213', 'malart', ''),
+(15, '1232131', '123213213', 'malart', ''),
+(16, 'frfrfrfrf', 'frfrffr', 'malart', ''),
+(17, 'frfrfrfrf', 'frfrffr', 'malart', ''),
+(18, 'mlpjkohi', 'hello me', 'malart', 'pexels-photo-1955134.jpeg');
 
 -- --------------------------------------------------------
 
@@ -94,7 +109,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `posts`
 --
 ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `users`

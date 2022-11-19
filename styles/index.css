@@ -81,9 +81,12 @@ nav{
 
 #card{
     z-index: 1;
-    margin-top: 2em;
     padding: 1.2rem;
     /* border: 1px solid black; */
+}
+
+.cardNav{
+    margin-top: 5em;
 }
 
 .postBg{

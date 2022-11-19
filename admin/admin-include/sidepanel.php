@@ -59,12 +59,6 @@
                         </li>
 
                         <li class="nav-item ">
-                            <a class="nav-link" id="addPost" href="./addPost.php">
-                                <i class="material-icons">add</i>
-                                <p>Add Posts</p>
-                            </a>
-                        </li>
-                        <li class="nav-item ">
                             <a class="nav-link" id="manageUser" href="./manageUser.php">
                                 <i class="material-icons">edit_user</i>
                                 <p>Manage User</p>
